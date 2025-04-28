@@ -5,6 +5,7 @@ use jogo_milhao;
 create table if not exists usuario (
 	id INT PRIMARY KEY auto_increment,
     email varchar(255) not null unique,
+    nome varchar(100) not null,
 	senha blob not null, 
     type boolean not null
 );
@@ -15,7 +16,7 @@ create table if not exists questao(
     dica text
 );
 
-create table if not exists alterativa(
+create table if not exists alternativa(
 	id int primary key auto_increment,
     q_id int not null, 
     enunciado text not null,
