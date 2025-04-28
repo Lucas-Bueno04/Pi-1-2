@@ -32,7 +32,7 @@ class RodadaRepository:
 
             with DBConnectionHandler() as database:
 
-                registries = database.session.query(Rodada).all()
+                registries = database.session.query(Rodada).order_by(Rodada.pontuacao.desc()).all()
 
                 return registries
             
