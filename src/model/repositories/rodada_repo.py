@@ -1,6 +1,6 @@
 from src.model.entities.rodada import Rodada
 from src.model.settings.connection import DBConnectionHandler
-
+from typing import List
 
 
 
@@ -23,3 +23,21 @@ class RodadaRepository:
             database.session.rollback()
             raise exception
         
+
+    @classmethod
+
+    def show_all(self)->List[Rodada]:
+
+        try:
+
+            with DBConnectionHandler() as database:
+
+                registries = database.session.query(Rodada).all()
+
+                return registries
+            
+        except Exception as exception:
+
+            database.session.rollback()
+            raise exception
+
