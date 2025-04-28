@@ -15,8 +15,8 @@ def test_insert_alternative():
 
     mock_enunciado_questao = "Qual a capital da Alemanha?"
     mock_dica = "Participante de La Casa de Papel"
-
-    new_question = Questao(enunciado = mock_enunciado_questao, dica = mock_dica)
+    mock_materia = "GEOGRAFIA"
+    new_question = Questao(enunciado = mock_enunciado_questao, dica = mock_dica,  materia=mock_materia)
     QuestaoRepository.insert_question(new_question=new_question)
 
     mock_id_questao = QuestaoRepository.get_question_id_by_enunciado(mock_enunciado_questao)

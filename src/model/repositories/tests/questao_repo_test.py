@@ -13,8 +13,8 @@ def test_insert_question():
 
     mock_enunciado = "Qual a capital da Alemanha?"
     mock_dica = "Participante de La Casa de Papel"
-
-    new_question = Questao(enunciado = mock_enunciado, dica = mock_dica)
+    mock_materia = "GEOGRAFIA"
+    new_question = Questao(enunciado = mock_enunciado, dica = mock_dica, materia = mock_materia)
     QuestaoRepository.insert_question(new_question=new_question)
 
     sql = '''

@@ -14,3 +14,5 @@ class Usuario(Base):
 
     # Relacionamentos
     rodadas = relationship("Rodada", back_populates="usuario")
+
+

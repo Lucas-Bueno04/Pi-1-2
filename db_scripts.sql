@@ -12,6 +12,7 @@ create table if not exists usuario (
 
 create table if not exists questao(
 	id int primary key auto_increment,
+    materia varchar(50) not null, 
     enunciado text not null, 
     dica text
 );
