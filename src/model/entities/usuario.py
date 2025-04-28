@@ -8,8 +8,11 @@ class Usuario(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(255), nullable=False, unique=True)
+    nome = Column(String(100), nullable=False)
     senha = Column(BLOB, nullable=False)
     type = Column(Boolean, nullable=False)
 
     # Relacionamentos
     rodadas = relationship("Rodada", back_populates="usuario")
+
+
