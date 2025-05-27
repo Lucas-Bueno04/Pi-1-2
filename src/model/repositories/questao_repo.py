@@ -1,6 +1,7 @@
 from src.model.entities.questao import Questao
+from src.model.entities.alternativa import Alternativa
 from src.model.settings.connection import DBConnectionHandler
-
+from sqlalchemy.orm import joinedload
 
 
 class QuestaoRepository:
@@ -21,6 +22,23 @@ class QuestaoRepository:
             database.session.rollback()
             raise exception
         
+    @classmethod
+
+    def get_all(self):
+
+        try:
+            with DBConnectionHandler() as database:
+                questions = (
+                    database.session
+                    .query(Questao)
+                    .options(joinedload(Questao.alternativas))  # Aqui carrega as alternativas junto
+                    .all()
+                )
+                return questions
+        except Exception as e:
+            raise e
+        
+    
     @classmethod
 
     def get_question_id_by_enunciado(self, enunciado):
