@@ -13,7 +13,7 @@ class HomeFrame(ctk.CTkFrame):
 
         self.start_command = start_command
 
-        self.main_label_img = ctk.CTkImage(dark_image=Image.open("src/assets/home_frame4.png"), light_image=Image.open("src/assets/home_frame4.png"), size=(settings['MainWidth'],settings['MainHeight']))
+        self.main_label_img = ctk.CTkImage(dark_image=Image.open("src/assets/home_frame6.png"), light_image=Image.open("src/assets/home_frame4.png"), size=(settings['MainWidth'],settings['MainHeight']))
 
 
         self.main_label = ctk.CTkLabel(
@@ -28,13 +28,14 @@ class HomeFrame(ctk.CTkFrame):
 
         self.title_home_label = ctk.CTkLabel(
             master=self, 
-            text='Jogo do Milhão',
+            text='POLIEDRO',
             width=300, 
             height=100,
-            font=settings['HeaderFont'],
-            text_color="#ffffff",
-            bg_color="#052159",
-            fg_color="#052159",
+            font=("Arial", 52),
+            text_color="#000000",
+            bg_color="#EEECFA",
+            fg_color="#EEECFA",
+            corner_radius=20
         )
 
         self.title_home_label.place(x=362, y = 200)
@@ -44,9 +45,9 @@ class HomeFrame(ctk.CTkFrame):
             width=300, 
             height=100,
             text="JOGAR",
-            text_color="#FFFFFF",
-            bg_color="#052159",
-            fg_color="#DF650E",
+            text_color="#000000",
+            bg_color="#EEECFA",
+            fg_color="#FFCB7C",
             corner_radius=20,
             font=settings['HeaderFont'],
             hover_color="#F12754",

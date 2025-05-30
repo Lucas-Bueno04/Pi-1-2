@@ -1,5 +1,6 @@
 import tkinter as tk
 import customtkinter as ctk
+from PIL import Image
 from src.view.app_views.app_view_settings import settings
 
 
@@ -30,7 +31,8 @@ class QuestionFrame(ctk.CTkFrame):
         self.question_title.place(x = 312, y = 50)
 
         init_place_height = 150
-    
+
+
         for answer in self.question_params['Answers']:
             
             if answer['Status'] == "visible":
@@ -38,7 +40,7 @@ class QuestionFrame(ctk.CTkFrame):
                     master=self, 
                     width=400,
                     height=50, 
-                    text=f"{answer['Id']}.{answer['Title']}",
+                    text=f"{answer['Title']}",
                     font=settings['ParagraphFont'],
                     text_color="#FFFFFF",
                     fg_color="#FF6F00",
@@ -50,7 +52,19 @@ class QuestionFrame(ctk.CTkFrame):
                 # Atualiza a altura para o próximo botão
                 init_place_height += 60  # 50 da altura + 10 de espaçamento
                 
-            
+        self.lamp_img = ctk.CTkImage(dark_image=Image.open("src/assets/GroupLamp.png"), light_image=Image.open("src/assets/GroupLamp.png"), size=(50,50))
+        self.lamp_button = ctk.CTkButton(
+            master = self, 
+            width=50,
+            height=50, 
+            text ='',
+            fg_color='#052159',
+            bg_color='#052159',
+            image=self.lamp_img,
+            command=None
+        )
+        self.lamp_button.place(x =904, y = 480 )
+
                 
     def on_answer_click(self, is_correct, button):
 

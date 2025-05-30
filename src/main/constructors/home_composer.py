@@ -8,3 +8,5 @@ def home_composer( master:Windown, start_command:Callable):
     home = HomeFrame(master=master, start_command=start_command,)
 
     return home
+
+
