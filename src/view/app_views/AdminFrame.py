@@ -62,7 +62,7 @@ class AdminFrame(ctk.CTkFrame):
             master = self, 
             width=300, 
             height=50, 
-            text='Cadastrar Aluno', 
+            text='Mostrar Ranking', 
             font=settings['HeaderFont'],
             bg_color="#003E69", 
             fg_color="#FF6F00", 
