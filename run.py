@@ -4,7 +4,7 @@ from src.view.app_views.Windown import Windown
 from src.view.app_views.TelaLogin import Telalogin
 from src.view.app_views.AdminFrame import AdminFrame
 from src.view.app_views.CadAlunoFrame import CadAlunoFrame
-
+from src.view.app_views.RankingFrame import RankingFrame
 if __name__ == "__main__":
 
     j = Windown()

@@ -77,9 +77,22 @@ class CadAlunoFrame(ctk.CTkFrame):
 
         self.send_button = ctk.CTkButton(master=self.background_label,
                                          width=300, 
-                                         height=100, 
+                                         height=50, 
                                          text="Salvar", 
                                          font=settings['ParagraphFont'], bg_color="#003E69", fg_color= "#FF6F00", hover_color="#F12754",
                                          corner_radius=10)
         
-        self.send_button.place(x =362, y = 450 )
+        self.send_button.place(x =362, y = 420 )
+
+        self.back_img = ctk.CTkImage(dark_image=Image.open("src/assets/picon_back.png"), light_image=Image.open("src/assets/picon_back.png"), size=(50,50))
+        self.back_buttom = ctk.CTkButton(
+            master = self.background_label, 
+            text=None, 
+            bg_color="#003E69",
+            fg_color="#003E69",
+            width=50, 
+            height=50,
+            image=self.back_img
+        )
+
+        self.back_buttom.place(x =462, y = 500 )
