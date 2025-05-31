@@ -13,8 +13,21 @@ class HomeFrame(ctk.CTkFrame):
 
         self.start_command = start_command
 
-        self.main_label_img = ctk.CTkImage(dark_image=Image.open("src/assets/home_frame6.png"), light_image=Image.open("src/assets/home_frame4.png"), size=(settings['MainWidth'],settings['MainHeight']))
+        self.main_label_img = ctk.CTkImage(
+            dark_image=Image.open("src/assets/home_frame4.png"),
+            light_image=Image.open("src/assets/home_frame4.png"),
+            size=(settings['MainWidth'], settings['MainHeight'])
+        )
 
+        self.bg_label = ctk.CTkLabel(
+            master=self,
+            text=None,
+            image=self.main_label_img,
+            width=settings["MainWidth"],
+            height=settings["MainHeight"]
+        )
+
+        self.bg_label.place(x=0, y=0, relwidth=1, relheight=1)  # cobre toda a tela
 
         self.main_label = ctk.CTkLabel(
             master = self, 
@@ -25,33 +38,19 @@ class HomeFrame(ctk.CTkFrame):
         )
 
         self.main_label.place(x = 0, y = 0)
-
-        self.title_home_label = ctk.CTkLabel(
-            master=self, 
-            text='POLIEDRO',
-            width=300, 
-            height=100,
-            font=("Arial", 52),
-            text_color="#000000",
-            bg_color="#EEECFA",
-            fg_color="#EEECFA",
-            corner_radius=20
-        )
-
-        self.title_home_label.place(x=362, y = 200)
         
         self.play_btn = ctk.CTkButton(
             master = self, 
             width=300, 
             height=100,
             text="JOGAR",
-            text_color="#000000",
-            bg_color="#EEECFA",
-            fg_color="#FFCB7C",
+            text_color="#FFFFFF",
+            bg_color="#003e6a",
+            fg_color="#FF6F00",
             corner_radius=20,
-            font=settings['HeaderFont'],
+            font=('Roboto', 28, 'bold'),
             hover_color="#F12754",
             command=self.start_command
         )
 
-        self.play_btn.place(x=362, y = 400 )
+        self.play_btn.place(x=362, y = 400)
