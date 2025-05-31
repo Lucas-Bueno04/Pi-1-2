@@ -66,6 +66,6 @@ class AdminFrame(ctk.CTkFrame):
             font=settings['HeaderFont'],
             bg_color="#003E69", 
             fg_color="#FF6F00", 
-            corner_radius=10, hover_color='#F12754'
+            corner_radius=10, hover_color="#F12754"
         )
         self.exibir_ranking_button.place(x = 362, y = 450 )

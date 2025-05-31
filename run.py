@@ -5,9 +5,10 @@ from src.view.app_views.TelaLogin import Telalogin
 from src.view.app_views.AdminFrame import AdminFrame
 from src.view.app_views.CadAlunoFrame import CadAlunoFrame
 from src.view.app_views.RankingFrame import RankingFrame
+from src.view.app_views.AddQuestFrame import AddQuestFrame
 if __name__ == "__main__":
 
     j = Windown()
-    t = CadAlunoFrame(master=j)
+    t = AddQuestFrame(master=j)
     t.place(x = 0, y = 0)
     j.mainloop()
