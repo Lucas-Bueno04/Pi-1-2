@@ -27,34 +27,34 @@ class Telalogin(ctk.CTkFrame):
             width=300, 
             height=50, 
             text='LOGIN',
-            font=("Arial", 52), 
-            text_color="#000000", 
-            bg_color="#EEECFA", 
-            fg_color="#EEECFA"
+            font=('Roboto', 52, 'bold'), 
+            text_color="#FFFFFF", 
+            bg_color="#003e6a", 
+            fg_color="#003e6a"
         )
         self.login_label_text.place( x = 600, y = 100)
 
         self.login_entry = ctk.CTkEntry(
             master = self.login_label, 
             placeholder_text="Email", 
-            text_color="#000000",
+            text_color="#FFFFFF",
             font=settings['ParagraphFont'],
             width=300,
             height=50,
-            bg_color="#FFCB7C",
-            fg_color="#FFCB7C"
+            bg_color="#003e6a",
+            fg_color="#003e6a"
         )
         self.login_entry.place(x = 600, y = 200)
 
         self.password_entry = ctk.CTkEntry(
             master = self.login_label, 
             placeholder_text="Senha", 
-            text_color="#000000",
+            text_color="#FFFFFF",
             font=settings['ParagraphFont'],
             width=300,
             height=50,
-            bg_color="#FFCB7C",
-            fg_color="#FFCB7C"
+            bg_color="#003e6a",
+            fg_color="#003e6a"
 
         )
 
