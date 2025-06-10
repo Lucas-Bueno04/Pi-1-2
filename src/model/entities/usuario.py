@@ -12,7 +12,3 @@ class Usuario(Base):
     senha = Column(BLOB, nullable=False)
     type = Column(Boolean, nullable=False)
 
-    # Relacionamentos
-    rodadas = relationship("Rodada", back_populates="usuario")
-
-

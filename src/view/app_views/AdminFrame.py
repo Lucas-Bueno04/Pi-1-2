@@ -7,9 +7,12 @@ from typing import Callable
 
 class AdminFrame(ctk.CTkFrame):
 
-    def __init__(self, master, width = settings['MainWidth'], height = settings['MainHeight'], corner_radius = None, border_width = None, bg_color = "transparent", fg_color = None, border_color = None, background_corner_colors = None, overwrite_preferred_drawing_method = None, **kwargs):
+    def __init__(self, master,show_add_question=None, show_cad_aluno=None, show_ranking=None,  width = settings['MainWidth'], height = settings['MainHeight'], corner_radius = None, border_width = None, bg_color = "transparent", fg_color = None, border_color = None, background_corner_colors = None, overwrite_preferred_drawing_method = None, **kwargs):
         super().__init__(master, width, height, corner_radius, border_width, bg_color, fg_color, border_color, background_corner_colors, overwrite_preferred_drawing_method, **kwargs)
 
+        self.show_add_question = show_add_question
+        self.show_cad_aluno = show_cad_aluno
+        self.show_ranking = show_ranking
 
         self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/bgimage.jpeg"), light_image=Image.open("src/assets/bgimage.jpeg"), size=(settings['MainWidth'],settings['MainHeight']))
 
@@ -42,7 +45,8 @@ class AdminFrame(ctk.CTkFrame):
                                                    font=settings['HeaderFont'],
                                                    bg_color="#003E69", 
                                                    fg_color="#FF6F00", 
-                                                   corner_radius=10, hover_color='#F12754')
+                                                   corner_radius=10, hover_color='#F12754', 
+                                                   command=show_add_question)
         
         self.editar_questão_button.place(x = 362, y = 250)
 
@@ -53,7 +57,8 @@ class AdminFrame(ctk.CTkFrame):
                                                    font=settings['HeaderFont'],
                                                    bg_color="#003E69", 
                                                    fg_color="#FF6F00", 
-                                                   corner_radius=10, hover_color='#F12754'
+                                                   corner_radius=10, hover_color='#F12754',
+                                                   command=show_cad_aluno
                                                      )
         
         self.cadastrar_alunos_button.place( x = 362, y =350 )
@@ -66,6 +71,7 @@ class AdminFrame(ctk.CTkFrame):
             font=settings['HeaderFont'],
             bg_color="#003E69", 
             fg_color="#FF6F00", 
-            corner_radius=10, hover_color="#F12754"
+            corner_radius=10, hover_color="#F12754",
+            command=show_ranking
         )
         self.exibir_ranking_button.place(x = 362, y = 450 )

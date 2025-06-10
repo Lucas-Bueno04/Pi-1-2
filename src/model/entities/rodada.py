@@ -10,6 +10,3 @@ class Rodada(Base):
     pontuacao = Column(Integer, nullable=False)
     data = Column(Date, nullable=False)
     id_usuario = Column(Integer, ForeignKey('usuario.id'), nullable=False)
-
-    # Relacionamento
-    usuario = relationship("Usuario", back_populates="rodadas")

@@ -36,4 +36,22 @@ class UserRepository:
 
                 database.session.rollback()
                 raise exception
-                   
+    
+
+    @classmethod
+
+    def get_user_by_id(self, id_user):
+
+        with DBConnectionHandler() as database:
+
+            try:
+
+                usuario = database.session.query(Usuario).filter(Usuario.id == id_user).one()
+
+                return usuario
+
+            except Exception as exception:
+
+                database.session.rollback()
+                raise exception
+    

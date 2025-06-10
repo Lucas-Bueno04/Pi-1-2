@@ -16,8 +16,8 @@ class QuestionFrame(ctk.CTkFrame):
         self.question_params = question_params
 
         self.background_image = ctk.CTkImage(
-            light_image=Image.open("src/assets/question_frame.png"),
-            dark_image=Image.open("src/assets/question_frame.png"),
+            light_image=Image.open("src/assets/background_frame.png"),
+            dark_image=Image.open("src/assets/background_frame.png"),
             size=(width, height)
         )
 

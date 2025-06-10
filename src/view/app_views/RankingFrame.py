@@ -7,9 +7,11 @@ from typing import Callable
 
 class RankingFrame(ctk.CTkFrame):
 
-    def __init__(self, master, width = settings["MainWidth"], height = settings['MainHeight'], corner_radius = None, border_width = None, bg_color = "transparent", fg_color = None, border_color = None, background_corner_colors = None, overwrite_preferred_drawing_method = None, **kwargs):
-        super().__init__(master, width, height, corner_radius, border_width, bg_color, fg_color, border_color, background_corner_colors, overwrite_preferred_drawing_method, **kwargs)
-
+    def __init__(self, master, get_registries_command=None, back_command=None, width = settings["MainWidth"], height = settings['MainHeight'], corner_radius = None, border_width = None, bg_color = "transparent", fg_color = None, border_color = None, background_corner_colors = None, overwrite_preferred_drawing_method = None, **kwargs):
+        super().__init__(  master, width, height, corner_radius, border_width, bg_color, fg_color, border_color, background_corner_colors, overwrite_preferred_drawing_method, **kwargs)
+        self.back_command = back_command
+        self.get_registries_command = get_registries_command
+        
         self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/bgimage.jpeg"), light_image=Image.open("src/assets/bgimage.jpeg"), size=(settings['MainWidth'],settings['MainHeight']))
 
         self.background_label = ctk.CTkLabel(
@@ -62,7 +64,17 @@ class RankingFrame(ctk.CTkFrame):
             fg_color="#003E69",
             width=50, 
             height=50,
-            image=self.back_img
+            image=self.back_img,
+            command=self.back_command
         )
 
         self.back_buttom.place(x =462, y = 500 )
+
+        self.insert_data_into_table()
+
+    def insert_data_into_table(self, ):
+
+        registries = self.get_registries_command()
+
+        for registro in registries:
+            self.ranking_table.insert("", "end", values=registro)
