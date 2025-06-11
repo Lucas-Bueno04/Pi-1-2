@@ -11,7 +11,7 @@ class AddQuestFrame(ctk.CTkFrame):
         self.back_command = back_command
         self.insert_command = insert_command
 
-        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/bgimage.jpeg"), light_image=Image.open("src/assets/bgimage.jpeg"), size=(settings['MainWidth'],settings['MainHeight']))
+        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/background_frame.png"), light_image=Image.open("src/assets/background_frame.png"), size=(settings['MainWidth'],settings['MainHeight']))
 
         self.background_label = ctk.CTkLabel(
             master=self, 
@@ -26,20 +26,20 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label,
             width=300, 
             height=50, 
-            font=settings["HeaderFont"],
+            font=('Roboto', 52, 'bold'),
             text="Adicionar Questão",
             text_color="#FFFFFF",
             bg_color="#003E69",
             fg_color="#003E69"
         )
 
-        self.text_label.place(x = 362, y = 10)
+        self.text_label.place(x = 292, y = 10)
 
         self.pergunta_entry = ctk.CTkEntry(
             master=self.background_label, 
             width=600,
             height=30,
-            placeholder_text="Questão:",
+            placeholder_text="Questão",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -53,7 +53,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=600,
             height=30,
-            placeholder_text="Dica:",
+            placeholder_text="Dica",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -67,7 +67,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=300,
             height=30,
-            placeholder_text="Opção 1:",
+            placeholder_text="Opção 1",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -86,6 +86,7 @@ class AddQuestFrame(ctk.CTkFrame):
             fg_color="#FF6F00",
             bg_color="#003E69",
             text_color="#ffffff",
+            font=('Roboto', 16, 'bold'),
             corner_radius=10
         )
         self.check1.place(x = 620, y = 170 )
@@ -94,7 +95,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=300,
             height=30,
-            placeholder_text="Opção 2:",
+            placeholder_text="Opção 2",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -112,6 +113,7 @@ class AddQuestFrame(ctk.CTkFrame):
             fg_color="#FF6F00",
             bg_color="#003E69",
             text_color="#ffffff",
+            font=('Roboto', 16, 'bold'),
             corner_radius=10
         )
         self.check2.place(x = 620, y = 220 )
@@ -120,7 +122,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=300,
             height=30,
-            placeholder_text="Opção 3:",
+            placeholder_text="Opção 3",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -138,6 +140,7 @@ class AddQuestFrame(ctk.CTkFrame):
             fg_color="#FF6F00",
             bg_color="#003E69",
             text_color="#ffffff",
+            font=('Roboto', 16, 'bold'),
             corner_radius=10
         )
         self.check3.place(x = 620, y = 270 )
@@ -146,7 +149,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=300,
             height=30,
-            placeholder_text="Opção 4:",
+            placeholder_text="Opção 4",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -164,6 +167,7 @@ class AddQuestFrame(ctk.CTkFrame):
             fg_color="#FF6F00",
             bg_color="#003E69",
             text_color="#ffffff",
+            font=('Roboto', 16, 'bold'),
             corner_radius=10
         )
         self.check4.place(x = 620, y = 320 )
@@ -172,7 +176,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=300,
             height=30,
-            placeholder_text="Opção 5:",
+            placeholder_text="Opção 5",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -190,6 +194,7 @@ class AddQuestFrame(ctk.CTkFrame):
             fg_color="#FF6F00",
             bg_color="#003E69",
             text_color="#ffffff",
+            font=('Roboto', 16, 'bold'),
             corner_radius=10
         )
         self.check5.place(x = 620, y = 370 )
@@ -198,7 +203,7 @@ class AddQuestFrame(ctk.CTkFrame):
             master=self.background_label, 
             width=300,
             height=30,
-            placeholder_text="Matéria:",
+            placeholder_text="Matéria",
             corner_radius=10, 
             fg_color="#CFCECD",
             bg_color="#003E69",
@@ -208,16 +213,17 @@ class AddQuestFrame(ctk.CTkFrame):
 
         self.materia_entry.place(x = 362, y = 420)
 
-        self.send_button = ctk.CTkButton(master=self.background_label,
-                                         width=300, 
-                                         height=50, 
-                                         text="Salvar", 
-                                         font=settings['ParagraphFont'], bg_color="#003E69", fg_color= "#FF6F00", hover_color="#F12754",
-                                         corner_radius=10, 
-                                         command=self.__add
-                                         )
+        self.send_button = ctk.CTkButton(
+            master=self.background_label,
+            width=300, 
+            height=50, 
+            text="SALVAR", 
+            font=('Roboto', 28, 'bold'), bg_color="#003E69", fg_color= "#FF6F00", hover_color="#F12754",
+            corner_radius=10, 
+            command=self.__add
+        )
         
-        self.send_button.place(x =362, y = 470 )
+        self.send_button.place(x = 362, y = 470 )
 
         self.back_img = ctk.CTkImage(dark_image=Image.open("src/assets/picon_back.png"), light_image=Image.open("src/assets/picon_back.png"), size=(50,50))
         self.back_buttom = ctk.CTkButton(

@@ -14,7 +14,7 @@ class AdminFrame(ctk.CTkFrame):
         self.show_cad_aluno = show_cad_aluno
         self.show_ranking = show_ranking
 
-        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/bgimage.jpeg"), light_image=Image.open("src/assets/bgimage.jpeg"), size=(settings['MainWidth'],settings['MainHeight']))
+        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/admin_frame.png"), light_image=Image.open("src/assets/admin_frame.png"), size=(settings['MainWidth'],settings['MainHeight']))
 
         self.background_label = ctk.CTkLabel(
             master=self, 
@@ -25,50 +25,40 @@ class AdminFrame(ctk.CTkFrame):
         )
         self.background_label.place(x = 0, y = 0)
 
-        self.logo_poliedro = ctk.CTkImage(dark_image=Image.open("src/assets/logo_poliedro.png"), light_image=Image.open("src/assets/logo_poliedro.png"), size=(200,200))
-
-        self.logo_poliedro_label = ctk.CTkLabel(
-            master = self.background_label,
-            width=200,
-            height=200, 
-            text=None,
-            fg_color="#003E69",
-            bg_color="#003E69",
-            image=self.logo_poliedro,
+        self.editar_questão_button = ctk.CTkButton(
+            master=self, 
+            width=300, 
+            height=65, 
+            text='EDITAR QUESTÃO', 
+            font=('Roboto', 28, 'bold'),
+            bg_color="#003E69", 
+            fg_color="#FF6F00", 
+            corner_radius=10, hover_color='#F12754', 
+            command=show_add_question
         )
-        self.logo_poliedro_label.place(x = 412, y = 50)
-
-        self.editar_questão_button = ctk.CTkButton(master=self, 
-                                                   width=300, 
-                                                   height=50, 
-                                                   text='Editar Questão', 
-                                                   font=settings['HeaderFont'],
-                                                   bg_color="#003E69", 
-                                                   fg_color="#FF6F00", 
-                                                   corner_radius=10, hover_color='#F12754', 
-                                                   command=show_add_question)
         
         self.editar_questão_button.place(x = 362, y = 250)
 
-        self.cadastrar_alunos_button = ctk.CTkButton(master=self,
-                                                     width=300, 
-                                                   height=50, 
-                                                   text='Cadastrar Aluno', 
-                                                   font=settings['HeaderFont'],
-                                                   bg_color="#003E69", 
-                                                   fg_color="#FF6F00", 
-                                                   corner_radius=10, hover_color='#F12754',
-                                                   command=show_cad_aluno
-                                                     )
+        self.cadastrar_alunos_button = ctk.CTkButton(
+            master=self,
+            width=300, 
+            height=65, 
+            text='CADASTRAR ALUNO', 
+            font=('Roboto', 28, 'bold'),
+            bg_color="#003E69", 
+            fg_color="#FF6F00", 
+            corner_radius=10, hover_color='#F12754',
+            command=show_cad_aluno
+        )
         
         self.cadastrar_alunos_button.place( x = 362, y =350 )
 
         self.exibir_ranking_button = ctk.CTkButton(
             master = self, 
             width=300, 
-            height=50, 
-            text='Mostrar Ranking', 
-            font=settings['HeaderFont'],
+            height=65, 
+            text='MOSTRAR RANKING', 
+            font=('Roboto', 28, 'bold'),
             bg_color="#003E69", 
             fg_color="#FF6F00", 
             corner_radius=10, hover_color="#F12754",
