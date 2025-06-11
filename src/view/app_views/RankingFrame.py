@@ -12,7 +12,7 @@ class RankingFrame(ctk.CTkFrame):
         self.back_command = back_command
         self.get_registries_command = get_registries_command
         
-        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/background_frame.png"), light_image=Image.open("src/assets/background_frame.png"), size=(settings['MainWidth'],settings['MainHeight']))
+        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/bgimage.jpeg"), light_image=Image.open("src/assets/bgimage.jpeg"), size=(settings['MainWidth'],settings['MainHeight']))
 
         self.background_label = ctk.CTkLabel(
             master=self, 
@@ -30,7 +30,7 @@ class RankingFrame(ctk.CTkFrame):
         # Cabeçalho
         self.style.configure("Treeview.Heading", 
             background="#FF6F00", 
-            foreground="white",
+            foreground="white", 
             font=('Arial', 12, 'bold')
         )
 

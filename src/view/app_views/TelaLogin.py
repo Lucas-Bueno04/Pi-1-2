@@ -39,46 +39,46 @@ class Telalogin(ctk.CTkFrame):
         self.login_entry = ctk.CTkEntry(
             master = self.login_label, 
             placeholder_text="Email", 
-            text_color="#000000",
+            text_color="#FFFFFF",
             font=settings['ParagraphFont'],
             width=300,
             height=50,
             bg_color="#003e6a",
-            fg_color="#FFFFFF"
+            fg_color="#003e6a"
         )
         self.login_entry.place(x = 600, y = 200)
 
         self.password_entry = ctk.CTkEntry(
             master = self.login_label, 
             placeholder_text="Senha", 
-            text_color="#000000",
+            text_color="#FFFFFF",
             font=settings['ParagraphFont'],
             width=300,
             height=50,
             bg_color="#003e6a",
-            fg_color="#ffffff"
+            fg_color="#003e6a"
 
         )
 
         self.password_entry.place(x = 600, y = 300)
 
-        self.logar_button = ctk.CTkButton(
+        self.entrar_button = ctk.CTkButton(
             master=self, 
             width=300, 
-            height=100,
-            text="LOGAR",
-            text_color="#FFFFFF",
+            height=50, 
+            command=self.__login,
             bg_color="#003e6a",
             fg_color="#FF6F00",
-            corner_radius=20,
-            font=('Roboto', 28, 'bold'),
             hover_color="#F12754",
-            command=self.__login
+            text_color="#ffffff",
+            font=settings['HeaderFont'],
+            text="Entrar"
         )
 
-        self.logar_button.place(x = 600, y = 400)
+        self.entrar_button.place(x = 600, y = 400)
 
         
+
     def __login(self):
         email = self.login_entry.get()
         password = self.password_entry.get()

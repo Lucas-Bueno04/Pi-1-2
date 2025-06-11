@@ -12,7 +12,7 @@ class CadAlunoFrame(ctk.CTkFrame):
         self.back_command = back_command
         self.insert_command = insert_command
 
-        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/background_frame.png"), light_image=Image.open("src/assets/background_frame.png"), size=(settings['MainWidth'],settings['MainHeight']))
+        self.bg_img = ctk.CTkImage(dark_image=Image.open("src/assets/bgimage.jpeg"), light_image=Image.open("src/assets/bgimage.jpeg"), size=(settings['MainWidth'],settings['MainHeight']))
 
         self.background_label = ctk.CTkLabel(
             master=self, 
@@ -28,14 +28,14 @@ class CadAlunoFrame(ctk.CTkFrame):
             master=self.background_label,
             text='Cadastro de Aluno:',
             text_color="#FFFFFF",
-            font=('Roboto', 52, 'bold'),
+            font=settings['HeaderFont'],
             width=300, 
             height=50, 
             bg_color='#003E69',
             fg_color="#003E69"
         )
 
-        self.novo_aluno_label.place(x = 292, y = 50)
+        self.novo_aluno_label.place(x = 362, y = 50)
 
         self.email_entry = ctk.CTkEntry(
             master=self.background_label, 
@@ -92,15 +92,14 @@ class CadAlunoFrame(ctk.CTkFrame):
 
         self.password_confirm_entry.place(x = 362, y = 350)
 
-        self.send_button = ctk.CTkButton(
-            master=self.background_label,
-            width=300, 
-            height=75, 
-            text="SALVAR", 
-            font=('Roboto', 28, 'bold'), bg_color="#003E69", fg_color= "#FF6F00", hover_color="#F12754",
-            corner_radius=10,
-            command=self.__cadastrar,
-        )
+        self.send_button = ctk.CTkButton(master=self.background_label,
+                                         width=300, 
+                                         height=50, 
+                                         text="Salvar", 
+                                         font=settings['ParagraphFont'], bg_color="#003E69", fg_color= "#FF6F00", hover_color="#F12754",
+                                         corner_radius=10,
+                                         command=self.__cadastrar,
+                                         )
         
         self.send_button.place(x =362, y = 420 )
 
